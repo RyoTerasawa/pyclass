@@ -241,6 +241,9 @@ def classy_extension_config(branch):
         config['extra_link_args'] += ['-lomp']
     else:
         config['extra_link_args'] += ['-lgomp']
+        # RT added 
+        os.environ.setdefault('CCFLAG', os.environ.get('CFLAGS', ''))  # no -fPIC
+        
     if compiler in ['cc', 'icc']:
         # see https://github.com/lesgourg/class_public/issues/40
         config['libraries'] += ['irc', 'svml', 'imf']
