@@ -224,6 +224,7 @@ def classy_extension_config(branch):
     config = {}
     config['name'] = '{}.{}.binding'.format(package_basename, branch)
     # config['extra_link_args'] = ['-fPIC']
+    config['extra_link_args'] = []
     config['extra_compile_args'] = []
     # important or get a symbol not found error, because class is
     # compiled with c++?
